@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>GIPHY Search</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <h1>GIF Search</h1>
+
+        <form id="show-form">
+            <label for="show-input">Add A Show</label>
+            <input type="text" id="show-input" value="Add a Show">
+            <br>
+
+            <!-- Button triggers new show to be added -->
+            <input id="add-show" type="submit" value="Add a Show">
+        </form>
+
+        <div id="buttonsView"></div>
+        <div id="gifsView"></div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
+
 </html>
