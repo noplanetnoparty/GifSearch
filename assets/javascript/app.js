@@ -1,11 +1,10 @@
-var topics = ["tim and eric", "snl", "it's always sunny in philadelphia", "the office", "curb your enthusiasm", "south park", "party down", "arrested development", "cops", "to catch a predator"]
+var topics = ["Tim and Eric", "SNL", "It's Always Sunny in Philadelphia", "The Office", "Curb Your Enthusiasm", "South Park", "Party Down", "Arrested Development", "Cops", "To Catch a Predator"]
 
 var newShow;
 
 function renderGifs() {
     var show = $(this).attr("value");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        show + "&api_key=dc6zaTOxFJmzC&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + show + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     $.ajax({
         url: queryURL,
@@ -22,9 +21,9 @@ function renderGifs() {
 
             var p = $("<p>").text("Rating: " + results[i].rating)
 
-            var showImage = $('<img>')
+            var showImage = $("<img>")
 
-            showImage.addClass('gifImage')
+            showImage.addClass("gifImage")
 
             showImage.attr({
                 src: results[i].images.original_still.url,
@@ -34,28 +33,25 @@ function renderGifs() {
 
             });
 
-            showDiv.append(p).append(showImage)
+            showDiv.append(showImage).append(p)
 
-            $('#gifsView').prepend(showDiv)
+            $("#gifsView").prepend(showDiv)
 
         }
 
     });
 };
 
-
-// Function for displaying movie data
 function renderButtons() {
     $("#buttonsView").empty();
     for (var i = 0; i < topics.length; i++) {
-        $('<input>').attr({
+        $("<input>").attr({
             value: topics[i],
             type: "submit"
         }).addClass("shows").appendTo($("#buttonsView"))
     }
 }
 
-// This function handles events where one button is clicked
 $("#add-show").on("click", function (event) {
     event.preventDefault();
 
@@ -64,7 +60,6 @@ $("#add-show").on("click", function (event) {
 
     renderButtons();
 });
-
 
 function playPause() {
 
